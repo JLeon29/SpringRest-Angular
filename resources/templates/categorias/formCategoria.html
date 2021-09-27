@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>Shoes</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap css -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<!-- style css -->
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<!-- Responsive-->
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<!-- fevicon -->
+<link rel="icon" th:href="@{/images/fevicon.png}" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.min.css}">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet"
+	href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets -->
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+	media="screen">
+</head>
+<body>
+
+
+	<header th:insert="fragments/header :: header-principal"></header>
+
+	<hr>
+	</br>
+	</br>
+	</br>
+	<div class="container">
+
+		<div class="card">
+			<h4 class="card-header">
+				<strong>Crear Categoria</strong>
+			</h4>
+			<div class="card-body">
+				<form th:action="@{/categoria/save}" method="post" th:object="${categoria}" >
+
+
+
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="nombre">Nombre: </label>
+								<input type="hidden" th:field="*{id}">
+								<input type="text"
+									class="form-control" id="nombre" name="nombre" th:field="*{nombre}"
+									placeholder="Nombre de Categoria" required="required">
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="row">
+						<div class="col-md-9">
+							<div class="form-group">
+								<label for="detalles"><strong>Descripción: </strong></label>
+								<textarea class="form-control" name="descripcion" id="detalles" th:field="*{descripcion}"
+									rows="7"></textarea>
+							</div>
+						</div>
+
+					</div>
+					<button type="submit" class="btn btn-primary">Guardar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+
+	</main>
+	<!-- Javascript files-->
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/jquery-3.0.0.min.js}"></script>
+	<script th:src="@{/js/plugin.js}"></script>
+	<!-- sidebar -->
+	<script th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+	<script th:src="@{/js/custom.js}"></script>
+	<!-- javascript -->
+	<script th:src="@{/js/owl.carousel.js}"></script>
+	<script
+		src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+</body>
+</html>
